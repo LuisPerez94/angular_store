@@ -1,0 +1,19 @@
+nav {
+  max-width: 100%;
+  padding: 1rem;
+  background-color: rgb(14, 14, 69);
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+  }
+}

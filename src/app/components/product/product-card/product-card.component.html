@@ -1,0 +1,32 @@
+<div class="product-card">
+  @if (product) {
+  <a [routerLink]="['/product', product.slug]">
+    <div class="relative w-full h-full">
+      <img
+        [ngSrc]="product.images[0]"
+        alt="product.title"
+        width="200"
+        height="200"
+        class="rounded-md w-full h-full object-cover transition-all duration-300"
+      />
+      @if (product.images.length > 1) {
+      <img
+        [ngSrc]="product.images[1]"
+        alt="product.title"
+        width="200"
+        height="200"
+        class="rounded-md w-full h-full object-cover absolute top-0 left-0 opacity-0 hover:opacity-100 transition-all duration-300"
+      />
+      }
+    </div>
+    <div>
+      <p class="text-sm font-bold text-gray-900 mt-2">
+        {{ product.title }}
+      </p>
+      <p class="text-sm">$ {{ product.price }}</p>
+    </div>
+  </a>
+  } @else {
+  <p>No hay producto</p>
+  }
+</div>

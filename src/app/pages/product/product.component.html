@@ -1,0 +1,26 @@
+<section class="container mx-auto my-10">
+  <div class="product-image">
+    <img [src]="selectedImage()" alt="product.title" />
+    <div class="product-image-thumbs">
+      <img
+        *ngFor="let image of product.images"
+        [src]="image"
+        [alt]="product.title"
+        (click)="selectedImage.set(image)"
+        [class.selected]="selectedImage() === image"
+      />
+    </div>
+  </div>
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">
+      {{ product.title }}
+    </h1>
+    <p class="text-2xl font-bold text-gray-900">$ {{ product.price }}</p>
+    <p class="text-gray-900">{{ product.description }}</p>
+    <button
+      class="bg-gray-900 text-white px-4 py-2 rounded-md mt-4 hover:bg-gray-700 transition-all duration-300 cursor-pointer"
+    >
+      Add to cart
+    </button>
+  </div>
+</section>
