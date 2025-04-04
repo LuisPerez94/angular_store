@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavigationService {
   protected categories = signal<any[]>([]);
+  protected isOpen = signal<boolean>(false);
 
   constructor(private http: HttpClient) {
     this.loadCategories();
@@ -29,5 +30,13 @@ export class NavigationService {
 
   getCategoryBySlug(slug: string) {
     return this.categories().find((category) => category.slug === slug);
+  }
+
+  getIsOpen() {
+    return this.isOpen;
+  }
+
+  toggleMenu() {
+    this.isOpen.set(!this.isOpen());
   }
 }

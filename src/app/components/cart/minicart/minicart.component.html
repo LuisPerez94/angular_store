@@ -1,0 +1,39 @@
+<div
+  class="minicart fixed top-0 right-0 w-2/3 md:w-1/4 h-full bg-white z-50 transition-transform duration-300 px-4 py-4 shadow-lg"
+  [class.translate-x-0]="isCartOpen()"
+  [class.translate-x-full]="!isCartOpen()"
+>
+  <div class="minicart-header flex justify-between items-center border-b">
+    <h3 class="text-2xl font-bold">Cart</h3>
+    <button
+      (click)="toggleCart()"
+      class="text-black text-2xl absolute top-4 right-4 cursor-pointer"
+    >
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div
+    class="minicart-items overflow-y-auto max-h-[calc(100vh-100px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 py-4"
+  >
+    <app-minicart-product-card
+      *ngFor="let item of cartService.getCartItems()()"
+      [product]="item"
+    ></app-minicart-product-card>
+  </div>
+  <div class="minicart-footer py-4">
+    <p class="text-sm font-bold text-right">
+      Subtotal: ${{ cartService.getTotalPrice() }}
+    </p>
+    <p class="text-sm font-bold text-right">
+      Shipping: ${{ cartService.getShippingPrice() }}
+    </p>
+    <p class="text-2xl font-bold py-4 text-right">
+      Total: ${{ cartService.getTotalPrice() }}
+    </p>
+    <button
+      class="bg-black text-white px-4 py-2 w-full rounded-md cursor-pointer hover:bg-gray-800 transition-colors duration-300"
+    >
+      Checkout
+    </button>
+  </div>
+</div>

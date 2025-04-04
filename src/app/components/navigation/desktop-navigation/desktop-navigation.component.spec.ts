@@ -8,9 +8,8 @@ describe('DesktopNavigationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DesktopNavigationComponent]
-    })
-    .compileComponents();
+      imports: [DesktopNavigationComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DesktopNavigationComponent);
     component = fixture.componentInstance;
