@@ -14,7 +14,7 @@ export class WishlistService {
   }
 
   syncWithLocalStorage() {
-    const storedItems = localStorage.getItem('wishlist');
+    const storedItems = localStorage?.getItem('wishlist');
     if (storedItems) {
       this.wishlistItems.set(JSON.parse(storedItems));
     }
@@ -37,7 +37,9 @@ export class WishlistService {
   }
 
   saveToLocalStorage() {
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlistItems()));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('wishlist', JSON.stringify(this.wishlistItems()));
+    }
   }
 
   removeFromWishlist(product: Product) {
