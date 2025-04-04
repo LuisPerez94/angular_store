@@ -18,8 +18,16 @@
       </ul>
     </nav>
     <div class="flex gap-4 justify-end">
-      <input type="text" placeholder="Search" />
-      <button>Cart</button>
+      <button class="text-white cursor-pointer">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <a routerLink="/wishlist" class="text-white cursor-pointer">
+        <span class="material-symbols-outlined">favorite</span>
+        <span class="text-sm">{{ wishlistItems().length }}</span>
+      </a>
+      <button class="text-white cursor-pointer">
+        <span class="material-symbols-outlined"> shopping_cart </span>
+      </button>
     </div>
   </div>
 </header>

@@ -1,0 +1,14 @@
+<div class="text-sm text-gray-500">
+  <a class="hover:text-gray-700 hover:underline" routerLink="/">Home</a>
+  @if (currentPage.includes('/collection/')) {
+  <span>></span>
+  <a
+    class="hover:text-gray-700 hover:underline"
+    routerLink="/collection/{{ currentPage.split('/')[2] }}"
+    >{{ currentPage.split("/")[2] }}</a
+  >
+  } @if (currentPage.includes('/product/')) {
+  <span>></span>
+
+  }
+</div>

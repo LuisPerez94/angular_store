@@ -1,4 +1,6 @@
-<section class="container mx-auto my-10">
+<section
+  class="container mx-auto my-10 px-4 md:px-0 flex flex-col md:flex-row md:py-10 pb-10"
+>
   <div class="product-image">
     <img [src]="selectedImage()" alt="product.title" />
     <div class="product-image-thumbs">
@@ -12,13 +14,15 @@
     </div>
   </div>
   <div>
-    <h1 class="text-3xl font-bold text-gray-900 mb-2">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
       {{ product.title }}
     </h1>
-    <p class="text-2xl font-bold text-gray-900">$ {{ product.price }}</p>
-    <p class="text-gray-900">{{ product.description }}</p>
+    <p class="text-2xl font-bold text-gray-900 dark:text-white">
+      $ {{ product.price }}
+    </p>
+    <p class="text-gray-900 dark:text-white">{{ product.description }}</p>
     <button
-      class="bg-gray-900 text-white px-4 py-2 rounded-md mt-4 hover:bg-gray-700 transition-all duration-300 cursor-pointer"
+      class="bg-gray-900 text-white px-4 py-2 rounded-md mt-4 hover:bg-gray-700 transition-all duration-300 cursor-pointer dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
     >
       Add to cart
     </button>

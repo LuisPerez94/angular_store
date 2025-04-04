@@ -1,5 +1,7 @@
-<div class="product-card">
-  @if (product) {
+<div class="product-card relative">
+  @if (isClient) {
+  <app-pdp-card-button [product]="product"></app-pdp-card-button>
+  } @if (product) {
   <a [routerLink]="['/product', product.slug]">
     <div class="relative w-full h-full">
       <img
@@ -20,7 +22,7 @@
       }
     </div>
     <div>
-      <p class="text-sm font-bold text-gray-900 mt-2">
+      <p class="text-sm font-bold text-gray-900 dark:text-white mt-2">
         {{ product.title }}
       </p>
       <p class="text-sm">$ {{ product.price }}</p>
